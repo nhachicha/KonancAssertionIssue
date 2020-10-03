@@ -6,7 +6,7 @@
 # Compile a KLIB using the compiler plugin
 ```
 cd example
-konanc Api.kt -Xplugin=../build/shaded/konan_assertion_issue.jar -p library -o mylib
+konanc Api.kt -Xplugin=../build/shaded/KonancAssertionIssue.jar -p library -o mylib
 ```
 
 # Producing a kexe fails
