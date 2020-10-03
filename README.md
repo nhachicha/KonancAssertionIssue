@@ -8,6 +8,10 @@
 cd example
 konanc Api.kt -Xplugin=../build/shaded/KonancAssertionIssue.jar -p library -o mylib
 ```
+_Note: Make sure you see the following log line in the console which indicates that the generated IR property has been added_
+```
+warning: [Kotlin Compiler] 2020-10-03T18:55:21.619Z ClassLoweringPass lowering Api
+```
 
 # Producing a kexe fails
 ```
