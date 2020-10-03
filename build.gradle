@@ -1,0 +1,28 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.20-M1-63'
+    id("com.github.johnrengelman.shadow") version "5.2.0"
+    id("maven-publish")
+}
+
+repositories {
+    jcenter()
+    maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.20-M1-63"
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.4.20-M1-63"
+
+    compileOnly "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.4.20-M1-63"
+}
+
+shadowJar {
+    configurations = [project.configurations.compile]
+    archiveClassifier.set("")
+    destinationDirectory = file("$buildDir/shaded")
+    relocate "org.jetbrains.kotlin.com.intellij", "com.intellij"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
