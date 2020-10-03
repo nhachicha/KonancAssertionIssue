@@ -1,3 +1,5 @@
+Reproduction project for the issue https://youtrack.jetbrains.com/issue/KT-42443
+
 # Build the plugin
 ```
 ./gradlew shadowJar
